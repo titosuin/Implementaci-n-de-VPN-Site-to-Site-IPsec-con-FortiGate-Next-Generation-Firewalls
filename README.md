@@ -4,7 +4,6 @@
 * **Nombre:** Martin Alexander Perez Moya
 * **Matrícula:** 2024-2295
 * **Institución:** Instituto Tecnológico de Las Américas (ITLA)
-* **Carrera:** Tecnólogo en Ciberseguridad
 
 ---
 
