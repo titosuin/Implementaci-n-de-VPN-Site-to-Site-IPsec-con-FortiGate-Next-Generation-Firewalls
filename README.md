@@ -1,4 +1,4 @@
-# Implementaci-n-de-VPN-Site-to-Site-IPsec-con-FortiGate-Next-Generation-Firewalls
+# Implementacion-de-VPN-Site-to-Site-IPsec-con-FortiGate-Next-Generation-Firewalls
 
 ## 👤 Información del Estudiante
 * **Nombre:** Martin Alexander Perez Moya
