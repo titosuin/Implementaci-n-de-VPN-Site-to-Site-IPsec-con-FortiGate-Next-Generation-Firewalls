@@ -22,6 +22,9 @@ La red consta de dos sedes conectadas a través de un router ISP central.
 | **FortiGate-B** | port3 (WAN) | 192.168.20.2/30 | Salida hacia ISP |
 | **FortiGate-B** | port4 (LAN) | 10.22.95.65/26 | Gateway Oficina B |
 
+<img width="844" height="399" alt="image" src="https://github.com/user-attachments/assets/34a2855b-6769-472b-a8bf-6ca1d35effc3" />
+
+
 ---
 
 ## 🛠️ Detalles de la Configuración IPsec
@@ -39,35 +42,30 @@ A continuación, se presentan los comandos utilizados para validar la integridad
 
 ### 1. Validación de Identidad y Tiempo del Sistema
 Se confirma la identidad del equipo y la marca de tiempo de la configuración.
-```fortinet
-get system status | grep -E "Hostname|Version|System time"
 
-2. Estado de Interfaces Físicas
-Verificación de que los puertos WAN y LAN se encuentran operativos (Up).
-
-get system interface physical
-
-3. Integridad del Túnel VPN (Phase 1 y Phase 2)
-Este comando muestra los algoritmos negociados y el estado del túnel.
+ip en Puertos:
 
 
-get vpn ipsec tunnel details
+<img width="790" height="180" alt="image" src="https://github.com/user-attachments/assets/fb568048-a954-43e8-88d0-11b750f21c72" />
 
-4. Verificación de la Tabla de Enrutamiento
-Se valida que el tráfico hacia la sede remota está siendo dirigido correctamente a través de la interfaz virtual del túnel.
-
-Fragmento de código
-get router info routing-table all
-
-5. Captura de Paquetes (Cifrado ESP)
-Prueba fundamental para un Analista SOC: validar que el tráfico ICMP viaja encapsulado bajo el protocolo ESP (Encapsulating Security Payload), garantizando que los datos no son legibles en tránsito.
-
-Fragmento de código
-diag sniffer packet port3 'esp' 4
-
-6. Prueba de Salto Invisible (Traceroute)
-Desde el Host final, se realiza una traza de ruta para confirmar que el tráfico "salta" la infraestructura pública y llega directamente al segmento remoto.
 
 Bash
 tracert 10.22.95.70
-```
+
+
+<img width="346" height="114" alt="image" src="https://github.com/user-attachments/assets/b99e5064-dba2-4d87-a760-e51c86984386" />
+
+
+Tunel hacia el fortigate A;
+
+
+<img width="1080" height="349" alt="image" src="https://github.com/user-attachments/assets/cd8da352-a438-498a-98e2-0d9a32acd237" />
+
+
+
+Tunel hacia el fortigate B:
+
+
+<img width="1152" height="258" alt="image" src="https://github.com/user-attachments/assets/839a241e-c725-4331-889c-e147f5775089" />
+
+
